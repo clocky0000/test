@@ -1,0 +1,112 @@
+#side_menu_container {
+    display: none;
+  }
+  
+  #sidemenu_check:checked + #side_menu_container {
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 98;
+  }
+  
+  #side_menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(540px);
+    transition: all 500ms ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 540px;
+    height: 100%;
+    background-color: #107af2;
+    color: white;
+    padding: 140px 0;
+    box-sizing: border-box;
+    z-index: 99;
+  }
+  
+  #side_menu > .sidemenu_btn {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+  }
+  
+  #side_menu > .sidemenu_btn > div {
+    border: none;
+    transform: rotate(45deg);
+  }
+  
+  #side_menu > .sidemenu_btn > div:nth-child(2) {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  
+  #sidemenu_check:checked ~ #side_menu {
+    transform: translateX(0);
+  }
+  
+  #user_menu {
+    width: 250px;
+  }
+  
+  #user_menu > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #user_menu > div > img {
+    margin-right: 10px;
+  }
+  
+  #user_menu > div > #side_menu_span {
+    color: white;
+  }
+  
+  #user_menu > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #user_menu > ul > li > a {
+    display: block;
+    color: white;
+    width: 120px;
+    height: 30px;
+    border: 1px solid white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 7px;
+  }
+  
+  #user_menu > ul > li > a:hover {
+    background-color: white;
+    border-color: #107af2;
+    color: #107af2;
+  }
+  
+  #category_menu {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+  }
+  
+  #category_menu > li {
+    margin-bottom: 40px;
+  }
+  
+  #category_menu > li > a {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  

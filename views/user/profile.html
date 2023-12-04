@@ -1,0 +1,61 @@
+{% extends "../template/_layout.html" %}
+<!--  -->
+{% block css %}
+<link rel="stylesheet" href="/css/user/profile.css" />
+{% endblock %}
+<!--  -->
+{% block js %}
+<script src="/js/user/profile.js" defer></script>
+{% endblock%}
+<!--  -->
+{% block content %}
+<div id="content">
+  <form action="/user/profile" method="post">
+    <ul id="join_list">
+      <li>
+        <label for="userid">아이디</label>
+        <div>
+          <input
+            type="text"
+            name="userid"
+            id="userid"
+            maxlength="16"
+            value="{{user.userid}}"
+            readonly
+          />
+        </div>
+        <span id="id_span"></span>
+      </li>
+      <li>
+        <label for="usernickname">닉네임</label>
+        <input
+          type="text"
+          name="usernickname"
+          id="usernickname"
+          maxlength="16"
+          value="{{user.usernickname}}"
+        />
+        <span id="nickname_span"></span>
+      </li>
+      <li>
+        <label for="userpw">새 비밀번호</label>
+        <input type="password" name="userpw" id="userpw" maxlength="16" />
+        <span id="pw_span"></span>
+      </li>
+      <li>
+        <label for="userpw_check">새 비밀번호 확인</label>
+        <input type="password" id="userpw_check" />
+        <span id="pw_chk_span"></span>
+      </li>
+      <div id="btn_container">
+        <div class="join_btn non_btn" id="join_submit_btn">
+          모두입력해주세요
+        </div>
+        <a class="join_btn non_btn" id="quit_btn" href="/user/quit">
+          회원탈퇴
+        </a>
+      </div>
+    </ul>
+  </form>
+</div>
+{% endblock %}

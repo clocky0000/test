@@ -1,0 +1,28 @@
+{% extends "./template/_layout.html" %}
+<!--  -->
+{% block css %}
+<link rel="stylesheet" href="/css/main/mainpage.css" />
+{% endblock%}
+<!--  -->
+{% block js %}
+<script src="/js/index.js" defer></script>
+{% endblock %}
+<!--  -->
+{% block content%}
+<div id="content">
+  <div id="top_text">
+    {%if main and user%}
+    <div id="login">{{user.usernickname}}님 환영합니다.</div>
+    {% endif%}
+    <p>지금은 그냥 메인페이지에요 ~</p>
+    <p>이 부분에 알림설정한 게시글 보이게 할 예정</p>
+  </div>
+
+  <div id="middle_content">
+    <div id="middle_txt_content">
+      <p>게시판 메인페이지에욥</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

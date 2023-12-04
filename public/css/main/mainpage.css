@@ -1,0 +1,44 @@
+
+  #content {
+    width: 100%;
+  }
+  
+  #top_text {
+    width: 1200px;
+    margin: 0 auto;
+    font-size: 25px;
+    margin-top: 200px;
+    font-weight: 700;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  #top_text.fix {
+    margin: 0 auto;
+    position: absolute;
+    top: 780px;
+  }
+  
+  #middle_content {
+    width: 1200px;
+    margin: 120px auto 170px;
+  }
+  
+  #middle_txt_content {
+    margin-top: 40px;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 60px;
+  }
+  
+  #middle_txt_content > p {
+    margin-bottom: 15px;
+  }
+  
+  #login {
+    color: #107af2;
+    font-weight: 700;
+    font-size: 20px;
+  }

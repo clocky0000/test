@@ -1,0 +1,26 @@
+{% extends "../template/_layout.html" %}
+<!--  -->
+{% block css %}
+<link rel="stylesheet" href="/css/user/login.css" />
+{% endblock %}
+<!--  -->
+{% block js %} {% endblock%}
+<!--  -->
+{% block content %}
+<div id="content">
+  <div id="login_section">
+    <form action="/user/login" method="post">
+        <h2>로그인</h2>
+      <div id="id_div">
+        <label for="userid">아이디</label>
+        <input type="text" name="userid" id="userid" />
+      </div>
+      <div id="pw_div">
+        <label for="userpw">비밀번호</label>
+        <input type="password" name="userpw" id="userpw" />
+      </div>
+      <button type="submit">로그인</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

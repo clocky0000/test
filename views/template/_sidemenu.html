@@ -1,0 +1,32 @@
+<input type="checkbox" id="sidemenu_check" />
+<div id="side_menu_container"></div>
+<div id="side_menu">
+  <label for="sidemenu_check" class="sidemenu_btn">
+    <div></div>
+    <div></div>
+  </label>
+  <div id="user_menu">
+    <div>
+      {% if user %}
+      <span id="side_menu_span">{{user.usernickname}}님 환영합니다</span>
+      {% else %}
+      <span id="side_menu_span">환영합니다, 로그인 해주세요!</span>
+      {% endif %}
+    </div>
+    <ul>
+      {% if user %}
+      <li><a href="/user/profile">마이페이지</a></li>
+      <li><a href="/user/logout">로그아웃</a></li>
+      {% else %}
+      <li><a href="/user/login">로그인</a></li>
+      <li><a href="/user/join">회원가입</a></li>
+      {% endif %}
+    </ul>
+  </div>
+  <ul id="category_menu">
+    <li><a href="/">HOME</a></li>
+    <li><a href="/board/list?page=1">공지사항</a></li>
+    <li><a href="/FREE/list?page=1">자유게시판</a></li> 
+    <!-- 고쳐야됨 -->
+  </ul>
+</div>

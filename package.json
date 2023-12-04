@@ -1,0 +1,37 @@
+{
+    "name": "webb",
+    "version": "1.0.0",
+    "description": "---",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "kong": "nodemon server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^16.0.0",
+        "express": "^4.18.2",
+        "express-session": "^1.17.2",
+        "memorystore": "^1.6.7",
+        "mysql": "^2.18.1",
+        "mysql2": "^2.3.3",
+        "nunjucks": "^3.2.3",
+        "sql": "^0.78.0",
+        "winston": "^3.11.0",
+        "winston-daily-rotate-file": "^4.7.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/green-kong/team6_login_board.git"
+    },
+    "bugs": {
+        "url": "https://github.com/green-kong/team6_login_board/issues"
+    },
+    "homepage": "https://github.com/green-kong/team6_login_board#readme",
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
+}
