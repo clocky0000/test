@@ -23,10 +23,23 @@
       {% endif %}
     </ul>
   </div>
+  <div id="google_login">
+    <div>
+        {% if not user %}
+        <span id="side_menu_span">구글로도 로그인할 수 있어요!</span>
+        {% endif %}
+      </div>
+    <ul>
+        {% if not user %}
+        <li><a href="/user/google">구글 로그인</a></li>
+        {% endif %}
+        <!-- 구글 로그인 아직 안집어넣음 -->
+    </ul>
+  </div>
   <ul id="category_menu">
     <li><a href="/">HOME</a></li>
     <li><a href="/board/list?page=1">공지사항</a></li>
     <li><a href="/FREE/list?page=1">자유게시판</a></li> 
-    <!-- 고쳐야됨 -->
+    <!-- 고쳐야됨 게시판들 연결 해야됨 -->
   </ul>
 </div>

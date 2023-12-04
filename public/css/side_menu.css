@@ -93,6 +93,34 @@
     border-color: #107af2;
     color: #107af2;
   }
+
+  #google_login > ul {
+    display: flex;
+    align-items: center;
+  }
+
+  #google_login {
+    width: 250px;
+  }
+
+  #google_login > ul > li > a {
+    display: block;
+    color: white;
+    width: 120px;
+    height: 30px;
+    border: 1px solid white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 7px;
+    order: 3; 
+    margin-top: 20px; 
+  }
+
+  #google_login > ul > li > a:hover {
+    background-color: white;
+    border-color: #107af2;
+    color: #107af2;
+  }
   
   #category_menu {
     display: flex;
