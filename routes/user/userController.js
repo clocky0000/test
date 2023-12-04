@@ -59,12 +59,9 @@ exports.logincheck = async (req, res) => {
     await conn.commit();
     if (result.length !== 0) {
       if (result[0].isActive === 1) {
-        if (result[0].level === 3) {
-          req.session.user = result[0];
-          res.redirect('/');
-        }
-
-      } else {
+        req.session.user = result[0];
+        res.redirect('/');
+    } else {
         res.send(alertmove('/user/login', '사용이 정지된 계정입니다.'));
       }
     } else {

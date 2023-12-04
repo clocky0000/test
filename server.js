@@ -5,11 +5,12 @@ const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
 const router = require('./routes/index.js');
 const { logger } = require("./config/winston");
+const secret = require("./config/secret");
 
 const PORT = process.env.PORT || 3001;
 
 const sessionObj = {
-  secret: 'kong',
+  secret: secret.session,
   resave: false,
   saveUninitialized: true,
   store: new MemoryStore({ checkPeriod: 1000 * 60 * 5 }),
@@ -29,9 +30,9 @@ app.use(session(sessionObj));
 
 app.use(express.json());
 
-app.use(express.urlencoded({ extended: true })); //post 요청 사용할때 header body로 오는 텍스트 읽어줌
+app.use(express.urlencoded({ extended: true }));
 
-app.use(router); //라우터 받는 파일
+app.use(router);
 
 app.listen(PORT);
 
