@@ -1,0 +1,99 @@
+#header {
+    background-color: transparent;
+    position: absolute;
+  }
+  
+  #board_top {
+    width: 100%;
+    height: 25vh;
+    background-image: url('/img/bg/board_top_bgbg.jpg');
+    background-size: 110% 220px;
+    border-top: none;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 25vh;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 45px;
+  }
+  
+  table {
+    width: 1000px;
+    margin: 0 auto;
+    border-top: 2px solid #333;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  tr {
+    height: 35px;
+  }
+  
+  td {
+    border-bottom: 1px solid #ececec;
+    text-align: center;
+  }
+  
+  .subject_align {
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  #category {
+    text-align: center;
+    font-weight: 600;
+    background-color: #f6f6f6;
+  }
+  
+  #_id {
+    text-align: center;
+    width: 80px;
+  }
+  
+  #subject {
+    width: 600px;
+  }
+  
+  #author {
+    width: 120px;
+  }
+  
+  #btn_container {
+    display: flex;
+    justify-content: right;
+    width: 1000px;
+    margin: 0 auto;
+  }
+  
+  #write_btn {
+    width: 100px;
+    height: 35px;
+    background-color: #107af2;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+  }
+  
+  #write_btn:hover {
+    background-color: #fff;
+    color: #107af2;
+    border: 2px solid #107af2;
+    box-sizing: border-box;
+  }
+  
+  #pagenation {
+    width: 140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .emphasis {
+    font-size: 18px;
+    font-weight: 900;
+    color: #107af2;
+    border-bottom: 1px solid #107af2;
+  }
+  

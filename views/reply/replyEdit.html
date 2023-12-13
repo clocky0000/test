@@ -1,0 +1,12 @@
+<span>{{reply.usernickname}}</span>
+<span>{{reply.date}}</span>
+<div>{{reply.content}}</div>
+<span class="reply_edit_btn reply_btn">
+  수정
+  <input type="hidden" value="{{reply._id}}" />
+</span>
+<span class="reply_del_btn reply_btn">
+  삭제
+  <input type="hidden" value="{{reply._id}}" />
+</span>
+<input type="hidden" value="{{cnt}}" class="reply_cnt_fr_srv" />

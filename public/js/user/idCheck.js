@@ -6,7 +6,7 @@ idCheckBtn.addEventListener('click', () => {
     reqJson.userid = userid.value;
   
     const xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('POST', 'http://localhost:3000/user/join/idCheck', true);
+    xmlhttp.open('POST', 'http://localhost:3001/user/join/idCheck', true);
     xmlhttp.setRequestHeader('content-type', 'application/json');
     xmlhttp.send(JSON.stringify(reqJson));
   
@@ -20,14 +20,23 @@ idCheckBtn.addEventListener('click', () => {
       return;
     }
   
-    if (checkKor(userid.value)) {
+    const checkspecial = (str) => {
+      const regExp = /^[a-zA-Z0-9]+$/;
+      if (regExp.test(str)) {
+        return false;
+      } else {
+        return true;
+      }
+    };
+
+    if (checkspecial(userid.value)) {
       userid.style.background = 'pink';
-      idSpan.innerHTML = '영어와 숫자만 사용 가능';
+      idSpan.innerHTML = '특수문자 안됩니다~';
       idPass = false;
       btnActive();
       return;
     }
-  
+
     xmlhttp.onreadystatechange = () => {
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         if (xmlhttp.response === 'true') {

@@ -1,0 +1,77 @@
+{% extends "../template/_layout.html" %}
+<!--  -->
+{% block css %}
+<link rel="stylesheet" href="/css/board/list.css" />
+{% endblock %}
+<!--  -->
+{% block js %}
+<script src="/js/board/findCurPage.js" defer></script>
+<script src="/js/infoboard/searchKeyword.js" defer></script>
+{% endblock%}
+<!--  -->
+{% block content %}
+<div id="content">
+  <div id="board_top">자유게시판</div>
+  <table>
+    <tr id="category">
+      <td id="_id">번호</td>
+      <td id="subject">제목</td>
+      <td id="author">작성자</td>
+      <td id="date">등록일</td>
+      <td id="hit">조회수</td>
+    </tr>
+    {% for posting in result %}
+    <tr>
+      <td>{{posting._id}}</td>
+      <td class="subject_align">
+        <a href="/infoboard/view?index={{posting._id}}&page={{page}}"
+          >{{posting.subject}}</a
+        >
+      </td>
+      <td>{{posting.usernickname}}</td>
+      <td>{{posting.date}}</td>
+      <td>{{posting.hit}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <div id="btn_container"><a href="/infoboard/write" id="write_btn">글쓰기</a></div>
+  <ul id="pagenation">
+    <li><a href="/infoboard/list?page={{page-1}}">&lt;</a></li>
+    <li>
+      <a href="/infoboard/list?page={{pageCal*5-4}}" class="page_num">
+        {{pageCal*5-4}}
+      </a>
+    </li>
+    <li>
+      <a href="/infoboard/list?page={{pageCal*5-3}}" class="page_num">
+        {{pageCal*5-3}}
+      </a>
+    </li>
+    <li>
+      <a href="/infoboard/list?page={{pageCal*5-2}}" class="page_num">
+        {{pageCal*5-2}}
+      </a>
+    </li>
+    <li>
+      <a href="/infoboard/list?page={{pageCal*5-1}}" class="page_num">
+        {{pageCal*5-1}}
+      </a>
+    </li>
+    <li>
+      <a href="/infoboard/list?page={{pageCal*5}}" class="page_num">
+        {{pageCal*5}}
+      </a>
+    </li>
+    <li><a href="/infoboard/list?page={{page+1}}">&gt;</a></li>
+  </ul>
+</div>
+<div style="display: none" id="cur_page">{{page}}</div>
+
+<form action="/infoboard/search" method="get" class="search-form">
+	<input type="text" class="search-bar" name="q" placeholder="검색어를 입력하세요.">
+	<input type="submit" class="search-button" value="Search" >
+</form>
+
+{% endblock %}
+/search

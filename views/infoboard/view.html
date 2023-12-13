@@ -1,0 +1,79 @@
+{% extends "../template/_layout.html" %}
+<!--  -->
+{% block css %}
+<link rel="stylesheet" href="/css/board/view.css" />
+{% endblock %}
+<!--  -->
+{% block js %}
+<script src="/js/moreinfo/moreinfo.js" defer></script>
+{% endblock%}
+<!--  -->
+{% block content %}
+<div id="board_top">정보게시판</div>
+<div id="content">
+  <div id="title">
+    <p>{{result.subject}}</p>
+    <span>{{result.usernickname}}</span>
+    <span>{{result.date}}</span>
+    <span>조회수 {{result.hit}}</span>
+  </div>
+  <div id="main_content">{{result.content}}</div>
+  <div id="btn_container">
+    <a href="/infoboard/list?page={{page}}">글목록</a>
+    <div id="right_btn_container">
+      <a href="/infoboard/edit?index={{result._id}}&page={{page}}">수정하기</a>
+      <a href="/infoboard/delete?index={{result._id}}&page={{page}}">삭제하기</a>
+    </div>
+  </div>
+</div>
+<div id="moreinfo_container">
+    <div id="moreinfo_input">
+      <div id="sub_con_input">
+        <input type="hidden" id="linkedPosting" value="{{result._id}}" />
+        {%if user%}
+        <input type="text" id="moreinfo_author" value="{{user.usernickname}}" readonly />
+        <textarea
+          name="moreinfoContent"
+          id="moreinfo_content"
+          cols="30"
+          rows="10"
+          maxlength="120"
+        ></textarea>
+        {%else%}
+        <div id="unlogin_text">
+          <p>로그인 해야 정보를 입력할 수 있어요</p>
+        </div>
+        {%endif%}
+      </div>
+      {%if user%}
+      <button id="moreinfo_btn">정보등록</button>
+      {% else%}
+      <button id="moreinfo_btn" style="display: none">정보등록</button>
+      {%endif%}
+    </div>
+    <div id="moreinfo_list_header">
+      <p id="moreinfo_title">추가정보</p>
+      <p id="moreinfo_count">{{moreinfoCnt.moreinfoCnt}}개</p>
+    </div>
+    <div id="moreinfo_wrap">
+      <ul class="moreinfo_list">
+        {%for moreinfo in moreinfoList%}
+        <li>
+          <span>{{moreinfo.usernickname}}</span>
+          <span>{{moreinfo.date}}</span>
+          <div>{{moreinfo.content}}</div>
+          <span class="moreinfo_edit_btn moreinfo_btn">
+            <input type="hidden" value="{{moreinfo._id}}" />
+            수정
+          </span>
+          <span class="moreinfo_del_btn moreinfo_btn">
+            삭제
+            <input type="hidden" value="{{moreinfo._id}}" />
+          </span>
+        </li>
+        {%endfor%}
+      </ul>
+    </div>
+  </div>
+  {% endblock %}
+  

@@ -1,0 +1,36 @@
+{% extends "../template/_layout.html" %}
+<!--  -->
+{% block css %}
+<link rel="stylesheet" href="/css/board/write.css" />
+{% endblock %}
+<!--  -->
+{% block js %} {% endblock%}
+<!--  -->
+{% block content %}
+<div id="content">
+  <div id="board_top">정보게시판</div>
+  <form
+    action="/infoboard/edit?index={{index}}&page={{page}}"
+    method="POST"
+    id="write_form"
+  >
+    <div id="subject_container">
+      <div class="write_column">제목</div>
+      <div class="write_input_wrap">
+        <input type="text" name="subject" value="{{result.subject}}" />
+      </div>
+    </div>
+    <div id="content_container">
+      <div class="write_column">내용</div>
+      <div class="write_input_wrap">
+        <textarea name="content" id="write_content" cols="30" rows="10">
+{{result.content}}</textarea
+        >
+      </div>
+    </div>
+    <div id="btn_container">
+      <button type="submit" id="write_post_btn">작성 완료</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

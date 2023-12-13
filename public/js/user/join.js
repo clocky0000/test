@@ -54,6 +54,15 @@ idCheckBtn.addEventListener('click', () => {
   btnActive();
 });
 
+const checkspecial = (str) => {
+  const regExp = /^[a-zA-Z0-9]+$/;
+  if (regExp.test(str)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 userid.addEventListener('blur', () => {
   idCompare.push(userid.value);
 
